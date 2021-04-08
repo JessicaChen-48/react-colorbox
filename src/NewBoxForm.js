@@ -5,7 +5,7 @@ function NewBoxForm({handleForm}) {
   let initialData = {
     width:"",
     height:"",
-    backgroundColor:""
+    backgroundColor: ""
   }
 
   const [formData, setFormData] = useState(initialData)
@@ -21,8 +21,15 @@ function NewBoxForm({handleForm}) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleForm(formData)
-    setFormData(initialData)
+    let {height, width, backgroundColor} = formData
+
+    let intHeight = parseInt(height)
+    let intWidth = parseInt(width)
+
+    if (intHeight && intWidth) {
+      handleForm(formData)
+      setFormData(initialData)
+    }
   }
 
   return (
