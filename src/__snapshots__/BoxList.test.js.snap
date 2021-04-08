@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box snapshot test 1`] = `
+<div>
+  <div>
+    <div
+      class="box"
+      style="width: 100px; height: 100px; background-color: black;"
+    />
+    <button>
+      REMOVE THE BOX
+    </button>
+  </div>
+</div>
+`;
+
+exports[`BoxList snapshot test 1`] = `
+<div>
+  <div>
+    <form>
+      <label
+        for="width"
+      >
+        Width: 
+      </label>
+      <input
+        id="width"
+        name="width"
+        value=""
+      />
+      <label
+        for="height"
+      >
+        Height: 
+      </label>
+      <input
+        id="height"
+        name="height"
+        value=""
+      />
+      <label
+        for="backgroundColor"
+      >
+        Background Color: 
+      </label>
+      <input
+        id="backgroundColor"
+        name="backgroundColor"
+        value=""
+      />
+      <button>
+        SUBMIT
+      </button>
+    </form>
+  </div>
+  <br />
+</div>
+`;
+
+exports[`NewBoxForm snapshot test 1`] = `
+<div>
+  <form>
+    <label
+      for="width"
+    >
+      Width: 
+    </label>
+    <input
+      id="width"
+      name="width"
+      value=""
+    />
+    <label
+      for="height"
+    >
+      Height: 
+    </label>
+    <input
+      id="height"
+      name="height"
+      value=""
+    />
+    <label
+      for="backgroundColor"
+    >
+      Background Color: 
+    </label>
+    <input
+      id="backgroundColor"
+      name="backgroundColor"
+      value=""
+    />
+    <button>
+      SUBMIT
+    </button>
+  </form>
+</div>
+`;
