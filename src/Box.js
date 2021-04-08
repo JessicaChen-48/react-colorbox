@@ -1,8 +1,14 @@
-import "./Box.css"
+import "./Box.css";
 
-function Box({ width = "100px", height = "100px", backgroundColor = "black", removeBox}) {
+function Box({ width, height, backgroundColor, removeBox}) {
   let boxDetails = { width, height, backgroundColor };
-  return <div className="box" style={boxDetails}><button onClick={removeBox}>X</button></div>;
+  return (
+    <div>
+      <div className="box" style={boxDetails}>
+      </div>
+      <button onClick={removeBox}>REMOVE THE BOX</button>
+    </div>
+  );
 }
 
 export default Box;

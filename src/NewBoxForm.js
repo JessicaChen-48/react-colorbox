@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useState} from "react";
 
 function NewBoxForm({handleForm}) {
 
@@ -6,9 +6,9 @@ function NewBoxForm({handleForm}) {
     width:"",
     height:"",
     backgroundColor: ""
-  }
+  };
 
-  const [formData, setFormData] = useState(initialData)
+  const [formData, setFormData] = useState(initialData);
 
   function handleChange(e) {
     e.preventDefault();
@@ -16,19 +16,26 @@ function NewBoxForm({handleForm}) {
     setFormData(formData => ({
       ...formData,
       [name]: value,
-    }))
+    }));
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    let {height, width, backgroundColor} = formData
+    let {height, width} = formData;
 
-    let intHeight = parseInt(height)
-    let intWidth = parseInt(width)
+    let intHeight = parseInt(height);
+    let intWidth = parseInt(width);
 
     if (intHeight && intWidth) {
-      handleForm(formData)
-      setFormData(initialData)
+      handleForm(formData);
+      setFormData(initialData);
+    } else {
+      if(!intHeight) {
+        setFormData(formData => ({...formData, height:"Invalid Height!"}));
+      }
+      if(!intWidth) {
+        setFormData(formData => ({...formData, width:"Invalid Width!"}));
+      }
     }
   }
 
@@ -38,14 +45,14 @@ function NewBoxForm({handleForm}) {
     <input
       id="width"
       name="width"
-      value={formData.width} 
+      value={formData.width}
       onChange={handleChange}/>
 
     <label htmlFor="height">Height: </label>
       <input
         id="height"
         name="height"
-        value={formData.height} 
+        value={formData.height}
         onChange={handleChange}/>
 
     <label htmlFor="backgroundColor">Background Color: </label>
@@ -56,7 +63,7 @@ function NewBoxForm({handleForm}) {
         onChange={handleChange} />
     <button>SUBMIT</button>
   </form>
-  )
+  );
 }
 
 export default NewBoxForm;
